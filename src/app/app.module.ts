@@ -1,3 +1,5 @@
+import { UserRegisterComponent } from './user/user-register/user-register.component';
+import { UserLoginComponent } from './user/user-login/user-login.component';
 import { PropertyDetailComponent } from './property/property-detail/property-detail.component';
 import { AddPropertyComponent } from './property/add-property/add-property.component';
 import { HousingService } from './services/housing.service';
@@ -5,47 +7,39 @@ import { PropertyCardComponent } from './property/property-card/property-card.co
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { Routes, RouterModule, Router} from '@angular/router'
+import { Routes, RouterModule, Router} from '@angular/router';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { PropertyListComponent } from './property/property-list/property-list.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 const appRoutes: Routes = [
-  {
-    path: '',
-    component: PropertyListComponent
-  },
-  {
-    path: 'add-property',
-    component: AddPropertyComponent
-  },
-  {
-    path: 'rent-property',
-    component: PropertyListComponent
-  },
-  {
-    path: 'property-detail/:id',
-    component: PropertyDetailComponent
-  },
-  {
-    path: '**',
-    component: PropertyListComponent
-  }
+  {path: '', component: PropertyListComponent},
+  {path: 'add-property', component: AddPropertyComponent},
+  {path: 'rent-property', component: PropertyListComponent},
+  {path: 'property-detail/:id',component: PropertyDetailComponent},
+  {path: 'user/login', component: UserLoginComponent},
+  {path: 'user/register', component: UserRegisterComponent},
+  {path: '**', component: PropertyListComponent},
 ]
 @NgModule({
   declarations: [
     AppComponent,
     PropertyCardComponent,
     PropertyListComponent,
-      NavBarComponent,
-      AddPropertyComponent,
-      PropertyDetailComponent
+    NavBarComponent,
+    AddPropertyComponent,
+    PropertyDetailComponent,
+    UserLoginComponent,
+    UserRegisterComponent
    ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [HousingService],
   bootstrap: [AppComponent]
