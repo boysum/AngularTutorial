@@ -11,9 +11,9 @@ describe('AddPropertyComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AddPropertyComponent ]
+      declarations: [AddPropertyComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

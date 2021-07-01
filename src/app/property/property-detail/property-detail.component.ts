@@ -16,13 +16,13 @@ export class PropertyDetailComponent implements OnInit {
     this.propertyId = +this.route.snapshot.params['id'];
 
     this.route.params.subscribe(
-      (params) =>{
+      (params) => {
         this.propertyId = +params['id'];
       }
     )
   }
 
-  onSelectNext(){
+  onSelectNext() {
     this.propertyId += 1;
     this.router.navigate(['property-detail', this.propertyId])
   }

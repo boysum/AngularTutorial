@@ -1,3 +1,4 @@
+import { UserServiceService } from './services/user-service.service';
 import { UserRegisterComponent } from './user/user-register/user-register.component';
 import { UserLoginComponent } from './user/user-login/user-login.component';
 import { PropertyDetailComponent } from './property/property-detail/property-detail.component';
@@ -7,21 +8,21 @@ import { PropertyCardComponent } from './property/property-card/property-card.co
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { Routes, RouterModule, Router} from '@angular/router';
-import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { Routes, RouterModule, Router } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { PropertyListComponent } from './property/property-list/property-list.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 const appRoutes: Routes = [
-  {path: '', component: PropertyListComponent},
-  {path: 'add-property', component: AddPropertyComponent},
-  {path: 'rent-property', component: PropertyListComponent},
-  {path: 'property-detail/:id',component: PropertyDetailComponent},
-  {path: 'user/login', component: UserLoginComponent},
-  {path: 'user/register', component: UserRegisterComponent},
-  {path: '**', component: PropertyListComponent},
+  { path: '', component: PropertyListComponent },
+  { path: 'add-property', component: AddPropertyComponent },
+  { path: 'rent-property', component: PropertyListComponent },
+  { path: 'property-detail/:id', component: PropertyDetailComponent },
+  { path: 'user/login', component: UserLoginComponent },
+  { path: 'user/register', component: UserRegisterComponent },
+  { path: '**', component: PropertyListComponent },
 ]
 @NgModule({
   declarations: [
@@ -33,7 +34,7 @@ const appRoutes: Routes = [
     PropertyDetailComponent,
     UserLoginComponent,
     UserRegisterComponent
-   ],
+  ],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -41,7 +42,10 @@ const appRoutes: Routes = [
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [HousingService],
+  providers: [
+    HousingService,
+    UserServiceService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

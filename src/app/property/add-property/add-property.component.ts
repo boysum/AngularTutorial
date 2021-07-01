@@ -15,11 +15,10 @@ export class AddPropertyComponent implements OnInit {
   ngOnInit() {
   }
 
-  onBack(){
+  onBack() {
     this.router.navigate(['/']);
   }
-  onSubmit()
-  {
+  onSubmit() {
     console.log('it submitted');
     console.log(this.addPropertyForm);
   }

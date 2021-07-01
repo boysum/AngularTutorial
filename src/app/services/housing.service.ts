@@ -9,15 +9,14 @@ import { Observable } from 'rxjs';
 })
 export class HousingService {
 
-constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  getAllProperties(SellRent: number):Observable<IProperty[]>{
+  getAllProperties(SellRent: number): Observable<IProperty[]> {
     return this.http.get<Array<IProperty>>('data/properties.json').pipe(
-      map(data =>{
+      map(data => {
         const propertiesArray: Array<IProperty> = [];
-        for(const id in data){
-          if(data.hasOwnProperty(id) && data[id].SellRent === SellRent)
-          {
+        for (const id in data) {
+          if (data.hasOwnProperty(id) && data[id].SellRent === SellRent) {
             propertiesArray.push(data[id]);
           }
         }

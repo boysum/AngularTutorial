@@ -6,11 +6,11 @@ import { Component, Input } from "@angular/core";
   //template: `<h1>i am a card</h1>`,
   templateUrl: 'property-card.component.html',
   //styles: ['h1 {font-weight:normal;}']
-  styleUrls:['property-card.component.css']
+  styleUrls: ['property-card.component.css']
 })
 
-export class PropertyCardComponent{
-  @Input() property : IProperty = {
+export class PropertyCardComponent {
+  @Input() property: IProperty = {
     Name: "",
     SellRent: 1,
     Id: 0,

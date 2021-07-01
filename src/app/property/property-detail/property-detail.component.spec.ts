@@ -11,9 +11,9 @@ describe('PropertyDetailComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PropertyDetailComponent ]
+      declarations: [PropertyDetailComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
